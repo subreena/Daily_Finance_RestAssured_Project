@@ -1,0 +1,36 @@
+plugins {
+    id 'java'
+}
+
+group = 'org.example'
+version = '1.0-SNAPSHOT'
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+
+    testImplementation platform('org.junit:junit-bom:5.10.0')
+    testImplementation 'org.junit.jupiter:junit-jupiter'
+    testRuntimeOnly 'org.junit.platform:junit-platform-launcher'
+    // https://mvnrepository.com/artifact/io.rest-assured/rest-assured
+    testImplementation("io.rest-assured:rest-assured:5.5.6")
+    // https://mvnrepository.com/artifact/commons-configuration/commons-configuration
+    implementation("commons-configuration:commons-configuration:1.10")
+    // https://mvnrepository.com/artifact/org.testng/testng
+    testImplementation("org.testng:testng:7.11.0")
+    //jackson-databind for testNG
+    implementation("com.fasterxml.jackson.core:jackson-databind:2.17.0")
+// https://mvnrepository.com/artifact/com.github.javafaker/javafaker
+    implementation("com.github.javafaker:javafaker:1.0.2")
+    implementation("io.qameta.allure:allure-testng:2.29.1")
+    // https://mvnrepository.com/artifact/io.rest-assured/rest-assured
+}
+
+test {
+    useTestNG(){
+        suites "./src/test/resources/suiteRegression.xml"
+
+    }
+}

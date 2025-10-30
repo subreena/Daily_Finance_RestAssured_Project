@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<suite name="daily-finance-restAssured-automation">
+    <test name="Admin login and User creation">
+        <classes>
+            <class name="testrunner.AdminTestRunner"></class>
+        </classes>
+    </test>
+    <test name="Item create, view, update, delete">
+        <classes>
+            <class name="testrunner.ItemTestRunner"></class>
+        </classes>
+    </test>
+</suite>
